@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Piedra, Papel o Tijeras</title>
+</head>
+<body>
+    <h1>Piedra, Papel o Tijeras</h1>
+
+    <form method="POST">
+        <button name="eleccion" value="piedra">🪨 Piedra</button>
+        <button name="eleccion" value="papel">📄 Papel</button>
+        <button name="eleccion" value="tijeras">✂️ Tijeras</button>
+    </form>
+
+    {% if resultado %}
+    <hr>
+    <p>Tu elección: <strong>{{ eleccion_jugador }}</strong></p>
+    <p>Computadora: <strong>{{ eleccion_computadora }}</strong></p>
+
+    {% if resultado == "jugador" %}
+        <h2>🎉 ¡Ganaste!</h2>
+    {% elif resultado == "computadora" %}
+        <h2>😢 Perdiste</h2>
+    {% else %}
+        <h2>🤝 Empate</h2>
+    {% endif %}
+    {% endif %}
+
+</body>
+</html>
